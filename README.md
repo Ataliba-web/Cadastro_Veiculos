@@ -23,6 +23,7 @@
 
 ->Para subir a aplicação (Angular):
  - Dentro do repositório "front-end", executar o comendo "ng serve --open".
+ - URL de acesso em servidor local "http://localhost:4200/"
 
 ->Para executar o teste unitário (Mocha):
  - Dentro do repositório "beck-node-api", executar o comendo "npm run test".
