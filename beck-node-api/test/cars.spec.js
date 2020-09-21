@@ -24,7 +24,7 @@ describe('Teste das funcoes', () => {
     it('post', () => {
 		var req = 1;
 		var res;
-        const car = veiculos.post(req, res);
+        const car = veiculos.post('1', 'gl', 'gol', 'xx', 'yy', 'zz', '2020', res);
 
         // Verifica se as caracteristicas do objeto car é igual ao carSchema
         chai.expect(car).to.containSubset(carSchema);
@@ -37,10 +37,8 @@ describe('Teste das funcoes', () => {
 		
         const carros = veiculos.get();
         
-        chai.expect(carros.length).to.be.equals(3);
-        // Primeiro se verifica se está retornando um array
         // Verifica se as caracteristicas dos objetos no array é igual ao carSchema
-        chai.expect(carros).to.containSubset([carSchema]);
+        chai.expect(200).to.containSubset([carros]);
     });
 	
 	it('put', () => {
@@ -48,12 +46,10 @@ describe('Teste das funcoes', () => {
 		var req = 1;
 		var res;
 		
-        veiculos.put(req, res);
+        var status = veiculos.put(req, res);
         
-   //     chai.expect(carros.length).to.be.equals(3);
-        // Primeiro se verifica se está retornando um array
         // Verifica se as caracteristicas dos objetos no array é igual ao carSchema
-    //    chai.expect(carros).to.containSubset([carSchema]);
+        chai.expect(status).to.containSubset([201]);
     });
 	
 	it('delete', () => {
@@ -61,11 +57,9 @@ describe('Teste das funcoes', () => {
         var req = 1;
         var res;
 		
-        const carros = veiculos.delete(req, res);
+        var status = veiculos.delete(req, res);
         
-   //     chai.expect(carros.length).to.be.equals(3);
-        // Primeiro se verifica se está retornando um array
         // Verifica se as caracteristicas dos objetos no array é igual ao carSchema
-     //   chai.expect(carros).to.containSubset([carSchema]);
+        chai.expect(status).to.containSubset([204]);
     });
 });
